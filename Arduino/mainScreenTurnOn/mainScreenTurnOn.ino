@@ -4,7 +4,7 @@
    the data coming from the computer */
 byte byteRead;
 
-int led = 13;
+int led = 4;
 
 String readString = String("");
 
@@ -35,15 +35,20 @@ void loop() {
   
     if (readChar == '\n')
     {
-      if (readString.equals("ON\n"))
+      /*if (readString.equals("ON\n"))
       {
           digitalWrite(led, HIGH);
-/*          delay(2000);
-          digitalWrite(led, LOW);*/
       }
       
       if (readString.equals("OFF\n"))
       {
+          digitalWrite(led, LOW);
+      }
+*/      
+      if (readString.equals("TOGGLE\n"))
+      {
+          digitalWrite(led, HIGH);
+          delay(1500);
           digitalWrite(led, LOW);
       }
       readString="";
